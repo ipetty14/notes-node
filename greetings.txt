@@ -1,0 +1,3 @@
+Hello ipetty14!Hello ${user.username}!Hello ipetty14!Hello ipetty14!Hello ipetty14!Hello ipetty14! You are 22.Hello ipetty14! You are 22.
+Hello ipetty14! You are 22.
+Hello ipetty14! You are undefined.
