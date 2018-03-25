@@ -1,0 +1,22 @@
+{
+  "name": "notes-node",
+  "version": "1.0.0",
+  "description": "Notes application in nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipetty14/notes-node.git"
+  },
+  "author": "Ian Petty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ipetty14/notes-node/issues"
+  },
+  "homepage": "https://github.com/ipetty14/notes-node#readme",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
+}
