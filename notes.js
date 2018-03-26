@@ -1,5 +1,5 @@
 // Project Name: Notes
-//Filename: notes.js
+// Filename: notes.js
 // Author: Ian Petty
 
 const fs = require('fs');
@@ -44,7 +44,6 @@ var removeNote = (title) => {
 var readNote = (title) => {
   console.log('Reading note: ', title);
 };
-<<<<<<< HEAD
 
 module.exports = {
   addNote,
@@ -52,5 +51,3 @@ module.exports = {
   removeNote,
   readNote
 };
-=======
->>>>>>> 898eab24f4961949e8787c6ed1a188f9168960d5
