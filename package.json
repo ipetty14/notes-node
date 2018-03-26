@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ipetty14/notes-node#readme",
   "dependencies": {
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "to-lower": "^1.0.1",
+    "yargs": "^11.0.0"
   }
 }
