@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Project Name: Notes
 // Filename: app.js
 // Author: Ian Petty
@@ -38,3 +39,18 @@ if (command === 'add') {
 } */ else {
   console.log('Command not recognized...');
 }
+=======
+/*
+Project Title: Notes
+Author: Ian Petty
+*/
+
+// Built-in Packages
+const fs = require('fs');
+
+// 3rd Party Packages
+const _ = require('lodash');
+
+// File Dependencies
+const notes = require('./notes.js');
+>>>>>>> 898eab24f4961949e8787c6ed1a188f9168960d5
