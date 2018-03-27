@@ -34,12 +34,7 @@ var addNote = (title, body) => {
 };
 
 var listAllNotes = () => {
-  var notes = fetchNotes();
-
-  for (var i = 0; i < notes.length; i++) {
-    console.log(i + '. ' + notes[i].title);
-  }
-
+  return fetchNotes();
 };
 
 var removeNote = (title) => {
@@ -69,10 +64,17 @@ var editNote = (title, textToAdd) => {
   addNote(title, noteToEdit[0].body + ' ' + textToAdd);
 };
 
+var logNote = (note) => {
+  console.log('--');
+  console.log(`Title: ${note.title}`);
+  console.log(`Body: ${note.body}`);
+};
+
 module.exports = {
   addNote,
   listAllNotes,
   removeNote,
   readNote,
-  editNote
+  editNote,
+  logNote
 };

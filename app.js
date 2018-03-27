@@ -1,4 +1,4 @@
-// Project Name: Notes
+// Project Name: Notes 
 // Filename: app.js
 // Author: Ian Petty
 
@@ -18,43 +18,56 @@ const notes = require('./notes.js');
 const argv = yargs.argv;
 var command = lowerCase(argv._[0]);
 
-// console.log('Yargs: \n', argv);
+console.log('Yargs: \n', argv);
 
 //Add a new note to the database
 if (command === 'add') {
   var note = notes.addNote(argv.title, argv.body);
 
   if(note) {
-    console.log('Note added successfully...');
-    console.log('--');
-    console.log(`Title: ${note.title}`);
-    console.log(`Body: ${note.body}`);
+    console.log('Note successfully created...');
+    notes.logNote(note);
   } else {
     console.log('Note had a duplicate title... Please create a unique title for each note.');
   }
-} else if (command === 'remove') { //Remove a note from the database
+
+}
+//Remove a note from the database
+else if (command === 'remove') {
   var noteRemoved = notes.removeNote(argv.title);
   var message  = noteRemoved ? 'Note was removed...' : 'Note not found...';
   console.log(message);
-} else if (command === 'read') { // Print out the requested note
-  var noteRead = notes.readNote(argv.title);
 
-  if (noteRead) {
-    console.log(`Title: ${noteRead.title}`);
-    console.log(`Body: ${noteRead.body}`);
+}
+// Print out the requested note
+else if (command === 'read') {
+  var note = notes.readNote(argv.title);
+
+  if (note) {
+    console.log('Note found...');
+    notes.logNote(note);
   } else {
     console.log('Note not found...');
   }
-} else if (command === 'list') { // List the titles of all notes in the database
-  notes.listAllNotes();
-} else if (command === 'edit') {
-  var noteRead = notes.readNote(argv.title);
+
+}
+// List the titles of all notes in the database
+else if (command === 'list') {
+  var allNotes = notes.listAllNotes();
+
+  console.log(`Printing ${allNotes.length} note(s).`);
+  allNotes.forEach((note) => notes.logNote(note));
+
+}
+//Grab note by title and edit it then return it to the database
+else if (command === 'edit') {
+  var note = notes.readNote(argv.title);
   var addToNote = '';
 
-  if (noteRead) {
-    console.log(`Title: ${noteRead.title}`);
-    console.log(`Body: ${noteRead.body}`);
-    
+  if (note) {
+    console.log('Note to Be Modified...');
+    notes.logNote(note);
+
     const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout
@@ -71,6 +84,9 @@ if (command === 'add') {
   } else {
     console.log('Note not found...');
   }
-} else {
+
+}
+// All other commands
+else {
   console.log('Command not recognized...');
 }
